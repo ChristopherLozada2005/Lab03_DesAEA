@@ -55,10 +55,11 @@ namespace WpfApp1
                 {
                     students.Add(new Student
                     {
-                        StudentId = reader.GetInt32(0),
-                        FirstName = reader.GetString(1),
-                        LastName = reader.GetString(2)
+                        StudentId = (int)reader["StudentId"],
+                        FirstName = reader["FirstName"].ToString() ?? string.Empty,
+                        LastName = reader["LastName"].ToString() ?? string.Empty
                     });
+
                 }
             }
 
